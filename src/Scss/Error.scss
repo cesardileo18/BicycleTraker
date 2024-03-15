@@ -1,0 +1,52 @@
+/* Contenedor principal del error */
+.error {
+    min-height: calc(100vh - 55px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    background-color: whitesmoke;
+    align-items: center !important;
+
+    /* Encabezado del error */
+    .error__header {
+        text-align: center;
+
+        .error__heading {
+            color: #ff6347;
+            /* Color rojo oscuro, ajusta según tu paleta de colores */
+        }
+
+        /* Mensaje de error */
+        .error__message {
+            color: #333;
+            margin-bottom: 20px;
+        }
+    }
+
+    /* Contenido del error */
+    .error__content {
+        text-align: center;
+
+        /* Imagen de error */
+        .error__image {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            width: 400px;
+        }
+
+        /* Enlace de retorno */
+        .error__back {
+            color: #007bff;
+            /* Color azul, ajusta según tu paleta de colores */
+            font-weight: bold;
+        }
+
+        .error__back a {
+            text-decoration: none;
+            color: #007bff;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

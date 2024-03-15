@@ -1,0 +1,103 @@
+.container-fluid {
+  background-color: whitesmoke;
+  min-height: 100vh;
+
+  .contenedorMain {
+    .clear-icon {
+      cursor: pointer;
+      color: #ccc;
+
+      &:hover {
+        color: rgba(255, 0, 0, 0.518);
+
+      }
+    }
+
+    .boton-menos {
+      color: rgb(13 110 253 / 59%);
+    }
+
+    .search-container {
+      border: 1px solid #dee2e6 !important;
+      padding: 8px;
+      border-radius: 30px;
+      margin-bottom: 10px;
+
+      &:focus-within {
+        border-color: #86b7fe !important;
+        outline: 0 !important;
+        box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, .25) !important;
+      }
+
+      .form-control.search {
+        border-radius: 30px;
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border: none !important;
+
+        &:focus {
+          border-color: none !important;
+          outline: none !important;
+          box-shadow: none !important;
+        }
+      }
+
+    }
+
+    .card {
+      box-shadow: 0 4px 8px rgba(87, 87, 87, 0.1);
+      /* Agregar sombra */
+      transition: box-shadow 0.3s ease;
+      /* Transición suave para la sombra */
+      background: rgb(163 202 202) !important;
+      border: none !important;
+
+      &:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      }
+
+      .card-body {
+        .inservice {
+          background-color: rgb(0 128 0 / 31%);
+          border-radius: 20px;
+          padding: 5px;
+          display: flex;
+          justify-content: center;
+          align-items: center !important;
+        }
+
+        .outofservice {
+          background-color: rgba(214, 55, 7, 0.525);
+          border-radius: 20px;
+          padding: 5px;
+          display: flex;
+          justify-content: center;
+          align-items: center !important;
+
+        }
+
+        .electricBicycle {
+          max-width: 22px;
+          width: 100%;
+        }
+
+        .imgBicycleStation {
+          max-width: 40px;
+          width: 100%;
+        }
+      }
+
+    }
+
+    .btn-empty {
+      color: red;
+      cursor: pointer;
+    }
+  }
+
+}

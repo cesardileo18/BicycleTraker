@@ -1,0 +1,9 @@
+.container-fluid {
+    .containerLoading {
+        width: 100%;
+        min-height: calc(100vh - 48px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
