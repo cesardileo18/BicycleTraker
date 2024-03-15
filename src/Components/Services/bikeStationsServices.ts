@@ -1,3 +1,5 @@
+const development: string = import.meta.env.VITE_APP_ENV
+const url: string = import.meta.env.VITE_URL
 export interface BikeStationsData {
     data: any
 }
@@ -6,12 +8,21 @@ export interface BikeStationsDataToAddress {
 }
 
 class BikeStations {
+    private baseUrl: string;
+
+    constructor() {
+        if (development === 'development') {
+            this.baseUrl = 'http://localhost:9090';
+        } else {
+            this.baseUrl = url;
+        }
+    }
     async getBikeStations(): Promise<BikeStationsData> {
         const requestOptions: RequestInit = {
             method: 'GET',
         };
         try {
-            const response = await fetch('http://localhost:9090/api/ecobici-status', requestOptions);
+            const response = await fetch(`${this.baseUrl}/api/ecobici-status`, requestOptions);
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
@@ -27,7 +38,7 @@ class BikeStations {
             method: 'GET',
         };
         try {
-            const response = await fetch('http://localhost:9090/api//ecobici-information', requestOptions);
+            const response = await fetch(`${this.baseUrl}/api/ecobici-information`, requestOptions);
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }

@@ -6,7 +6,7 @@ import bicycleStation from "../assets/parking.png"
 import electricBicycle from "../assets/electric-bike.png"
 import ScrollButton from "./ScrollButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChargingStation, faCircleXmark, faClockRotateLeft, faLocationDot, faMagnifyingGlass, faMapLocationDot, faParking, faPersonBiking, faRotateLeft, faTrashCan } from "@fortawesome/free-solid-svg-icons";
+import { faChargingStation, faCircleXmark, faClockRotateLeft, faLocationDot, faMagnifyingGlass, faMapLocationDot, faParking, faPersonBiking, faRotateLeft } from "@fortawesome/free-solid-svg-icons";
 import "../Scss/Home.scss"
 import Spinner from "./Spinner";
 
