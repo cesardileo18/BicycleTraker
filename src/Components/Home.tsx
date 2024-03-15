@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ServerUser from "./Services/bikeStationsServices";
-import { BikeStationsData, BikeStationsDataToAddress } from "./Services/bikeStationsServices";
+import { BikeStationsData, BikeStationsDataToAddress,MatchingStation } from "./Services/bikeStationsServices";
 import imgStation from "../assets/estacion.jpg";
 import bicycleStation from "../assets/parking.png"
 import electricBicycle from "../assets/electric-bike.png"
@@ -11,8 +11,8 @@ import "../Scss/Home.scss"
 import Spinner from "./Spinner";
 
 const Home: React.FC = () => {
-    const [stations, setStations] = useState<BikeStationsData[]>([]);
-    const [displayedStations, setDisplayedStations] = useState<BikeStationsData[]>([]);
+    const [stations, setStations] = useState<MatchingStation[]>([]);
+    const [displayedStations, setDisplayedStations] = useState<MatchingStation[]>([]);
     const [displayedCount, setDisplayedCount] = useState<number>(10);
     const [searchText, setSearchText] = useState<string>('');
     const [loading, setLoading] = useState<Boolean>(false)
@@ -51,6 +51,7 @@ const Home: React.FC = () => {
                         // Si no se encuentra una estación coincidente, puedes manejarlo como desees
                         return station;
                     }
+
                 });
                 setStations(combinedData);
                 setLoading(false)
@@ -152,7 +153,7 @@ const Home: React.FC = () => {
                         </div>
                     )}
                     <section className="row">
-                        {displayedStations.map((bicy: BikeStationsData, index) => (
+                        {displayedStations.map((bicy: MatchingStation, index) => (
                             <article className="d-flex mt-3 col-lg-4 col-md-6 col-xl-4 col-sm-6 col-12 col-xxl-3" key={index}>
                                 <div className="card mb-3 p-3">
                                     <img src={imgStation} className="rounded-1" alt="estacion" style={bicy.status !== "IN_SERVICE" ? { opacity: 0.6 } : { opacity: 1 }} />
